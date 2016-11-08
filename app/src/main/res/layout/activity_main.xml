@@ -1,20 +1,60 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/activity_main"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.memories.MainActivity">
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/activity_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        tools:context="com.memories.MainActivity">
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/memory_title"
+            style="@style/TextInplutLayoutStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:errorTextAppearance="@style/TextAppearence.App.ErrorTextInputLayout"
+            app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">
+
+            <EditText
+                android:id="@+id/memory_title_edit_text"
+                style="@style/AppTheme.EditText1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/memory_title"
+                android:text="" />
+        </android.support.design.widget.TextInputLayout>
+
+        <EditText
+            android:id="@+id/memory_description_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="7dp"
+            android:hint="@string/memory_description"
+            android:inputType="text|textMultiLine" />
+
+
+    </LinearLayout>
 
     <TextView
-        android:layout_width="wrap_content"
+        android:id="@+id/button_save"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="@+id/activity_main"
-        app:layout_constraintLeft_toLeftOf="@+id/activity_main"
-        app:layout_constraintRight_toRightOf="@+id/activity_main"
-        app:layout_constraintTop_toTopOf="@+id/activity_main" />
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom|center_vertical"
+        android:layout_margin="10dp"
+        android:height="@dimen/button_height"
+        android:background="@drawable/btn_bg_selector"
+        android:gravity="center"
+        android:text="@string/save"
+        android:onClick="onSaveButtonClicked"
+        android:textAlignment="gravity"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>
